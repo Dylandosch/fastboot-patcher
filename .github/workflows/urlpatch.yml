@@ -22,6 +22,8 @@ jobs:
          sudo apt install git wget lz4 tar openssl python3 -y
          
     - name: Download recovery image from URL
+      env:
+        https://mega.nz/file/uKIxSJoA#LCShCYoI6GyEiZ1mDdSiEqpqEGZapF6bF82BPu4UnII: ${{ github.event.inputs.image_url }}
       run: |
          wget ${{github.event.inputs.image_url}}
 
